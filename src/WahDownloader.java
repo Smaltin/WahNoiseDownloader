@@ -11,7 +11,7 @@ public class WahDownloader {
         String location = "https://inanoises.com/resources/noises/WAH_%s.mp3";
         Files.createDirectories(Paths.get("export"));
         for (int i = 1; i <= 480; i++) {
-            String downl = location.formatted(String.format("%04d", i));
+            String downl = String.format(location, String.format("%04d", i));
             downloadFile(new URL(downl), "export/WAH_" + String.format("%04d", i) + ".mp3");
             System.out.println("Downloaded #" + i + " to " + "export/WAH_" + String.format("%04d", i) + ".mp3");
         }
